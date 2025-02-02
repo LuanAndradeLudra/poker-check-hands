@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poker Game Layout</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 44 cards grid area -->
+        <section class="deck-area">
+            <h2>Pokerzin dos crias - <small>Desenvolvido por Luan Andrade</small></h2>
+            <div class="card-grid">
+            </div>
+        </section>
+
+        <!-- Game Area (Table + Hand Type) -->
+        <div class="game-area">
+            <!-- Hand type display -->
+            <div class="hand-type">
+                <span class="hand-label">Current Hand:</span>
+                <span class="hand-value"></span>
+            </div>
+
+            <!-- Poker table - 5 cards -->
+            <section class="poker-table">
+                <div class="table-cards">
+                    <div class="card table-card" data-placement="table"></div>
+                    <div class="card table-card" data-placement="table"></div>
+                    <div class="card table-card" data-placement="table"></div>
+                    <div class="card table-card" data-placement="table"></div>
+                    <div class="card table-card" data-placement="table"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Player's hand - 2 cards -->
+        <section class="player-hand">
+            <div class="hand-cards">
+                <div class="card hand-card" data-placement="hand"></div>
+                <div class="card hand-card" data-placement="hand"></div>
+            </div>
+        </section>
+        </div>
+    </div>
+    <script src="js/compare-cards.js"></script>
+    <script src="js/mount-cards.js"></script>
+    <script src="js/set-cards.js"></script>
+</body>
+</html>

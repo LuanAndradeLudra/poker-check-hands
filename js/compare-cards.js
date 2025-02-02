@@ -25,7 +25,7 @@ function checkHand() {
     const fullHouse = findHighestPair(actualDeck) && findThreeOfAKind(actualDeck).length
     if (fullHouse) {
         handName = 'full house';
-        highlightCards(fullHouse)
+        highlightCards(findHighestPair(actualDeck).concat(findThreeOfAKind(actualDeck)))
         return;
     }
 
@@ -245,6 +245,27 @@ function findStraightFlush(cards) {
     return null;
 }
 
-function highlightCards(cards){
+function highlightCards(cards) {
+    console.log(cards)
     document.querySelector('.hand-value').innerHTML = handName;
+
+    tableCards = document.querySelectorAll(".table-card.filled")
+
+    tableCards.forEach(card => {
+        if (cards.includes(card.getAttribute('data-value'))) {
+            card.classList.add('highlighted');
+        } else {
+            card.classList.remove('highlighted');
+        }
+    });
+
+    handCards = document.querySelectorAll(".hand-card.filled")
+
+    handCards.forEach(card => {
+        if (cards.includes(card.getAttribute('data-value'))) {
+            card.classList.add('highlighted');
+        } else {
+            card.classList.remove('highlighted');
+        }
+    });
 }

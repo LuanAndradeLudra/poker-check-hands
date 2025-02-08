@@ -24,16 +24,6 @@ function renderCards(deck) {
     });
 }
 
-// Função para ordenar por número
-function sortByNumber() {
-    let cardOrder = { ace: 1, jack: 11, queen: 12, king: 13 };
-    deck.sort((a, b) => {
-        let valueA = cardOrder[a.card] || parseInt(a.card);
-        let valueB = cardOrder[b.card] || parseInt(b.card);
-        return valueA - valueB;
-    });
-    renderCards(deck);
-}
 
 // Função para ordenar por naipe
 function sortBySuit() {
@@ -43,6 +33,6 @@ function sortBySuit() {
 
 // Inicializar o baralho
 window.onload = () => {
-    sortByNumber();
+    sortBySuit();
     initiateDeckScript();
 };
